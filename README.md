@@ -56,6 +56,11 @@ $ source <virtualenv dir>
 $ pip install --update tensorflow-gpu
 ```
 
+Install other things:
+```
+$ pip install h5py scipy pyyaml keras
+```
+
 DONE
 
 ----------------something else---------------
