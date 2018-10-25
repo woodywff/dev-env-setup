@@ -79,3 +79,10 @@ To uninstall .deb installed packages:
 $ dpkg -c <xxx.deb> # show the installed files from .deb file
 $ dpkg -S <filename> # show which package the file comes from
 ```
+----------------Ref & Thanks to-------------------
+
+http://www.52nlp.cn/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%9C%8D%E5%8A%A1%E5%99%A8-1080ti-ubuntu16-04-cuda9-2-cudnn7-1-tensorflow-keras
+
+https://blog.csdn.net/weixin_40294256/article/details/79157838
+
+https://blog.csdn.net/qq_17550379/article/details/79592788
