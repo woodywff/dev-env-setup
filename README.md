@@ -1,5 +1,5 @@
-# history-of-setting-up-deep-learning-environment
-(ubuntu16.04 + gtx1080ti driver + cuda9.0 + cudnn for cuda9.0 + python3.5.2 + tensorflow1.11.0)
+# History of Setting Up Deep Learning Development Environment
+## (ubuntu16.04 + gtx1080ti driver + cuda9.0 + cudnn for cuda9.0 + python3.5.2 + tensorflow1.11.0)
 
 Clear up the old dirver things:
 ```
