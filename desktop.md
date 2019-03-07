@@ -53,7 +53,7 @@ $ source ~/.bashrc
 Install tensorflow (version up to date):
 ```
 $ source <virtualenv dir>
-$ pip install --update tensorflow-gpu
+$ pip install --upgrade tensorflow-gpu
 ```
 
 Install other things:
