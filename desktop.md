@@ -84,6 +84,11 @@ To uninstall .deb installed packages:
 $ dpkg -c <xxx.deb> # show the installed files from .deb file
 $ dpkg -S <filename> # show which package the file comes from
 ```
+To delete apt-key:
+```
+$ sudo apt-key list
+$ sudo apt-key del <id>
+```
 ----------------Ref & Thanks to-------------------
 
 http://www.52nlp.cn/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%9C%8D%E5%8A%A1%E5%99%A8-1080ti-ubuntu16-04-cuda9-2-cudnn7-1-tensorflow-keras
