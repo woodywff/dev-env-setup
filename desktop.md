@@ -10,7 +10,7 @@ Download cuda9.0 from nvidia's cuda [legacy release](https://developer.nvidia.co
 ```sh
 $ sudo dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb
 $ sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub
-$ sudo apt-get update`
+$ sudo apt-get update
 $ sudo apt-get install cuda
 ```
 This would also install nvidia gpu driver inclusively.
