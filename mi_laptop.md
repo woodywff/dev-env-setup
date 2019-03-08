@@ -73,7 +73,13 @@ Install other things:
 ```
 $ pip install h5py scipy pyyaml keras
 ```
-
+Since this laptop shares the similar environment with the desktop, I've copied the virtualenv here.
+```
+on desktop:
+$ tar -czf <.tar.gz> vp.3.5.2
+on laptop:
+$ tar -xzvf <.tar.gz>
+```
 DONE
 
 ----------------something else---------------
