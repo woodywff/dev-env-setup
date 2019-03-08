@@ -1,5 +1,5 @@
 # History of Setting Up Deep Learning Development Environment on MI-Laptop
-## ubuntu16.04 + gtx1060 (notebook) driver + cuda9.0 + cuDNN7.5.0 for CUDA10.1 + python3.5.2 + tensorflow1.11.0
+## ubuntu16.04 + gtx1060 (notebook) driver + cuda9.0 + cuDNN7.5.0 for CUDA9.0 + python3.5.2 + tensorflow1.11.0
 
 Clear up the old dirver things:
 ```
@@ -66,7 +66,7 @@ If you see `Test passed!`, then it works.
 Install tensorflow (version up to date):
 ```
 $ source <virtualenv dir>
-$ pip install --upgrade tensorflow-gpu
+$ pip install --upgrade tensorflow-gpu==1.11.0
 ```
 
 Install other things:
