@@ -1,14 +1,14 @@
 # History of Setting Up Deep Learning Development Environment on MI-Laptop
-## ubuntu16.04 + gtx1060 (notebook) driver + cuda10.1 + cuDNN7.5.0 for CUDA10.1 + python3.5.2 + tensorflow1.11.0
+## ubuntu16.04 + gtx1060 (notebook) driver + cuda9.0 + cuDNN7.5.0 for CUDA10.1 + python3.5.2 + tensorflow1.11.0
 
 Clear up the old dirver things:
 ```
 $ sudo apt-get purge nvidia*
 ```
 Because CUDA is forward compatible,
-download the latest edition(cuda10.1) from nvidia's cuda [legacy release](https://developer.nvidia.com/cuda-toolkit-archive) webpage. 
+download the cool edition(cuda9.0) from nvidia's cuda [legacy release](https://developer.nvidia.com/cuda-toolkit-archive) webpage. When saying cool I mean for some unkown reasons it may not be possible to use the latest edition.
 Then follow the official instructions for installation:
-```sh
+```
 $ sudo dpkg -i <.deb>
 $ sudo apt-key add <.pub>
 $ sudo apt-get update
@@ -31,20 +31,28 @@ Check up if the nvidia driver has been installed correctly:
 ```
 $nvidia-smi
 ```
+Download the patches and install them:
+```
+$ sudo dpkg -i <patch.deb>
+$ sudo apt-get update
+$ apt-get upgrade cuda
+```
+
 Post-installation action: Config the environment variable.
 ```
 $ vi ~/.bashrc
-    export PATH=/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1${PATH:+:${PATH}}
-    export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    export CUDA_HOME=/usr/local/cuda
 $ source ~/.bashrc
 ```
 
 Download the corresponding cudnn from nvidia's [cudnn page ](https://developer.nvidia.com/rdp/cudnn-download)(tarball named `Library for Linux`) and follow the installation instructions:
 ```
 $ tar -zxvf <.tgz>
-$ sudo cp cuda/include/cudnn.h /usr/local/cuda-10.1/include
-$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda-10.1/lib64
-$ sudo chmod a+r /usr/local/cuda-10.1/include/cudnn.h /usr/local/cuda-10.1/lib64/libcudnn*
+$ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+$ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 ```
 
 Verifing: download the `cudnn_samples_v7` and run one example.
