@@ -18,7 +18,10 @@ $ sudo apt-get update
 $ sudo apt-get install cuda
 ```
 This would also install nvidia gpu driver inclusively.
-(You may not see this for the installation of cuda10.0)By the end of the installation, you would be redirected to the package configuration page in which 
+
+(You may not need to do this below for cuda10.0)
+
+By the end of the installation, you would be redirected to the package configuration page in which 
 you will be asked to input a key for further use.
 
 Reboot ubuntu and you will stop on the MOK management blue screen.
