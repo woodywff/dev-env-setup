@@ -1,6 +1,9 @@
 # History of Setting Up Deep Learning Development Environment on MI-Laptop
 ## ubuntu16.04 + gtx1060 (notebook) driver + cuda9.0 + cuDNN7.5.0 for CUDA9.0 + python3.5.2 + tensorflow1.11.0
 
+(Up to the update is written, for the installation of tf2.0.0-alpha0, the laptop has been equipped with cuda10.0 + cuDNN7.6.0.
+All the instructions follow the same manner below.)
+
 Clear up the old dirver things:
 ```
 $ sudo apt-get purge nvidia*
@@ -15,7 +18,7 @@ $ sudo apt-get update
 $ sudo apt-get install cuda
 ```
 This would also install nvidia gpu driver inclusively.
-By the end of the installation, you would be redirected to the package configuration page in which 
+(You may not see this for the installation of cuda10.0)By the end of the installation, you would be redirected to the package configuration page in which 
 you will be asked to input a key for further use.
 
 Reboot ubuntu and you will stop on the MOK management blue screen.
