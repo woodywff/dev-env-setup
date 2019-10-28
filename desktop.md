@@ -1,4 +1,29 @@
 # History of Setting Up Deep Learning Development Environment
+------------------------
+## Latest update: cuda10.0 + cudnn for cuda10.0 + tensorflow2.0
+- `$ sudo rm -r /usr/local/cuda*`
+- `$ sudo apt-get purge cuda*`
+- `$ sudo apt-get purge nvidia*`
+- Install cuda according to the official [install guide](https://docs.nvidia.com/cuda/archive/10.0/cuda-installation-guide-linux/index.html#ubuntu-installation)
+- `$ nvidia-smi` to check the GPU driver, it should be installed already after the cuda installation.
+- Install cuda patch:
+```
+$ sudo dpkg -i <patch.deb>
+$ sudo apt-get update
+$ apt-get upgrade cuda
+```
+- Set up the environment:
+```
+$ vi ~/.bashrc
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    export CUDA_HOME=/usr/local/cuda
+$ source ~/.bashrc
+```
+- Install cudnn according to the official [install guide](https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html)
+- Install tensorflow2.0
+-----------------------------------------
+
 ## (ubuntu16.04 + gtx1080ti driver + cuda9.0 + cudnn for cuda9.0 + python3.5.2 + tensorflow1.11.0)
 
 Clear up the old dirver things:
