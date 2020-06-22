@@ -1,7 +1,7 @@
-# Develop Environment for MI-Laptop with RTX2060 (notebook)
+# Development Environment for MI-Laptop with RTX2060 (notebook)
 ## ubuntu20.04 + cuda10.2 + cudnn7.6.5 + tensorflow2.2.0 + pytorch1.5.1
 
-
+### Install
 In Ubuntu20.04's `Aditional Drivers` choose the first item `Using NVIDIA driver metapackage from nvidia-driver-440`.
 It will automatically install the nvidia driver.
 
@@ -25,6 +25,7 @@ To verify the install of nvidia driver and to see which version of cuda fits the
 
 Download [cuda10.2](https://developer.nvidia.com/cuda-toolkit-archive).
 `Linux, x86_64, Ubuntu, 18.04, runfile(local)`
+
 Because cuda10.2 requires gcc < 8 g++ < 8 while ubuntu20.04 only has gcc9 and g++9, we need to do something like
 ```
 $ sudo apt-get install gcc-7 g++-7
@@ -73,19 +74,40 @@ $ ./mnistCUDNN
 Test passed!
 ```
 
-Tensorflow2.2.0 only supports cuda10.1, so we need to add some links:
+Tensorflow2.2.0 only supports cuda <= 10.1, so we need to add some links:
 ```
 $ cd /usr/local/cuda-10.2/targets/x86_64-linux/lib/
 $ ln -s libcudart.so.10.2.89 libcudart.so.10.1
 ```
+Paddlepaddle doesn't support python3.8 up to now, so we installed another python3.7.7:
+
+Download the [python3.7.7 source code](https://www.python.org/downloads/source/)
 ```
-$ virtualenv -p /usr/bin/python3.8 --system-site-packages vp3.8.2
+$ sudo apt-get install -y gcc make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
+$ cd ~/Downloads/python3.7.7
+$ ./configure
+$ make
+$ sudo make install
+```
+Update the links:
+```
+$ sudo rm /usr/local/bin/python3
+$ sudo ln -s /usr/local/bin/python3.7 /usr/bin/python3.7
+```
+Install the frameworks:
+```
+$ sudo apt-get install virtualenv
+$ virtualenv -p /usr/local/bin/python3.7 --system-site-packages vp3.7.7
+$ pip install -U pip
+$ pip install -U setuptools
 $ pip install tensorflow
 $ pip install torch torchvision
+$ pip install paddlepaddle-gpu
 ```
 
 
-
+---
+### Uninstall
 To uninstall nvidia driver:
 ```
 $ sudo apt-get purge nvidia*
@@ -102,10 +124,9 @@ $ sudo dpkg -r libcudnn7-dev
 $ sudo dpkg -r libcudnn7
 ```
 
+---
 
-DONE
-
-----------------Ref & Thanks to-------------------
+## Reference
 
 https://blog.csdn.net/ashome123/article/details/105822040/
 https://blog.csdn.net/sinat_20174131/article/details/106807448?%3E
