@@ -149,5 +149,8 @@ $ sudo dpkg -r libcudnn7
 ## Reference
 
 https://blog.csdn.net/ashome123/article/details/105822040/
+
 https://blog.csdn.net/sinat_20174131/article/details/106807448?%3E
+
+https://blog.csdn.net/qq_23889009/article/details/100887640
 
