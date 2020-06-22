@@ -1,5 +1,5 @@
 # Development Environment for MI-Laptop with RTX2060 (notebook)
-## ubuntu20.04 + cuda10.2 + cudnn7.6.5 + tensorflow2.2.0 + pytorch1.5.1
+## ubuntu20.04 + cuda10.2 + cudnn7.6.5 + python3.7.7 + tensorflow2.2.0 + pytorch1.5.1 + paddlepaddle1.8.2
 
 ### Install
 In Ubuntu20.04's `Aditional Drivers` choose the first item `Using NVIDIA driver metapackage from nvidia-driver-440`.
