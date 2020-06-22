@@ -85,6 +85,26 @@ Download the [python3.7.7 source code](https://www.python.org/downloads/source/)
 ```
 $ sudo apt-get install -y gcc make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
 $ cd ~/Downloads/python3.7.7
+```
+Here are something we need to fix first (Because later we will get some problem with `imports _ssl`):
+```
+$ cd Modules/
+$ vi Setup
+uncomment 207 and 211~214:
+206 # Socket module helper for socket(2)
+207 _socket socketmodule.c
+208 
+209 # Socket module helper for SSL support; you must comment out the other
+210 # socket line above, and possibly edit the SSL variable:
+211 SSL=/usr/local/ssl
+212 _ssl _ssl.c \
+213     -DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \
+214     -L$(SSL)/lib -lssl -lcrypto
+$ vi Setup.dist
+do the same thing as in Setup.
+```
+Install:
+```
 $ ./configure
 $ make
 $ sudo make install
