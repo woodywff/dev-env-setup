@@ -77,7 +77,7 @@ Test passed!
 Tensorflow2.2.0 only supports cuda <= 10.1, so we need to add some links:
 ```
 $ cd /usr/local/cuda-10.2/targets/x86_64-linux/lib/
-$ ln -s libcudart.so.10.2.89 libcudart.so.10.1
+$ sudo ln -s libcudart.so.10.2.89 libcudart.so.10.1
 ```
 Paddlepaddle doesn't support python3.8 up to now, so we installed another python3.7.7:
 
