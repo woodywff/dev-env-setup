@@ -23,7 +23,7 @@ $ nvidia-smi
 ```
 To verify the install of nvidia driver and to see which version of cuda fits the driver.
 
-Download [cuda10.2](https://developer.nvidia.com/cuda-toolkit-archive).
+Download [cuda-10.2](https://developer.nvidia.com/cuda-toolkit-archive).
 `Linux, x86_64, Ubuntu, 18.04, runfile(local)`
 
 Because cuda-10.2 requires gcc < 8 g++ < 8 while ubuntu-20.04 only has gcc-9 and g++-9, we need to do something like
