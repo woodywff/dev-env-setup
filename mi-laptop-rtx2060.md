@@ -1,8 +1,8 @@
-# Development Environment for MI-Laptop with RTX2060 (notebook)
-## ubuntu20.04 + cuda10.2 + cudnn7.6.5 + python3.7.7 + tensorflow2.2.0 + pytorch1.5.1 + paddlepaddle1.8.2
+# Development Environment for MI-Laptop with RTX-2060 (notebook)
+## Ubuntu-20.04 + Cuda-10.2 + Cudnn-7.6.5 + Python-3.7.7 + Tensorflow-2.2.0 + PyTorch-1.5.1 + PaddlePaddle-1.8.2
 
 ### Install
-In Ubuntu20.04's `Aditional Drivers` choose the first item `Using NVIDIA driver metapackage from nvidia-driver-440`.
+In Ubuntu-20.04's `Aditional Drivers` choose the first item `Using NVIDIA driver metapackage from nvidia-driver-440`.
 It will automatically install the nvidia driver.
 
 By the end of the installation, you would be redirected to the package configuration page in which 
@@ -26,7 +26,7 @@ To verify the install of nvidia driver and to see which version of cuda fits the
 Download [cuda10.2](https://developer.nvidia.com/cuda-toolkit-archive).
 `Linux, x86_64, Ubuntu, 18.04, runfile(local)`
 
-Because cuda10.2 requires gcc < 8 g++ < 8 while ubuntu20.04 only has gcc9 and g++9, we need to do something like
+Because cuda-10.2 requires gcc < 8 g++ < 8 while ubuntu-20.04 only has gcc-9 and g++-9, we need to do something like
 ```
 $ sudo apt-get install gcc-7 g++-7
 $ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 1
@@ -54,7 +54,7 @@ $ source ~/.bashrc
 ```
 `$ nvcc -V` to check the cuda info.
 
-Download the corresponding [cudnn7.6.5](https://developer.nvidia.com/rdp/cudnn-download)
+Download the corresponding [cudnn-7.6.5](https://developer.nvidia.com/rdp/cudnn-download)
 ```
 cuDNN Runtime Library for Ubuntu18.04 (Deb)
 cuDNN Developer Library for Ubuntu18.04 (Deb)
@@ -74,12 +74,12 @@ $ ./mnistCUDNN
 Test passed!
 ```
 
-Tensorflow2.2.0 only supports cuda <= 10.1, so we need to add some links:
+Tensorflow-2.2.0 only supports cuda <= 10.1, so we need to add some links:
 ```
 $ cd /usr/local/cuda-10.2/targets/x86_64-linux/lib/
 $ sudo ln -s libcudart.so.10.2.89 libcudart.so.10.1
 ```
-Paddlepaddle doesn't support python3.8 up to now, so we installed another python3.7.7:
+PaddlePaddle doesn't support Python-3.8 up to now, so we installed another Python-3.7.7:
 
 Download the [python3.7.7 source code](https://www.python.org/downloads/source/)
 ```
