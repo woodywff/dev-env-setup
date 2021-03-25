@@ -1,0 +1,15 @@
+# Development Environment for RTX3060 
+## Nvidia Driver
+The latest driver works.
+## Cuda
+Cuda 11.0 works for all the latest frameworks including pytorch-1.8.0+cu111, tensorflow-2.4.1, and paddle-2.0.1.
+The latest Cuda-11.2 is not supported by tf-2.4.1.
+## Cudnn
+The latest Cudnn-8.1.1.33 works.
+
+Follow instructions on official websites for all the installation.
+
+## Reference
+
+https://github.com/woodywff/dev-env-setup/blob/master/mi-laptop-rtx2060.md
+
